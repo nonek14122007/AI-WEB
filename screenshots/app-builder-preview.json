@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "AI · Nhóm 13",
+      "hasCanvas": false,
+      "bodyTextLen": 14,
+      "bodyTextHash": "2d23a2237c9b6b120f5374273f8e87d8e18a0feff8b8dd88ebad8002e5a095ec",
+      "bodyTextPrefix": "NHÓM 13 1 / 20",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "AI · Nhóm 13",
+      "hasCanvas": false,
+      "bodyTextLen": 14,
+      "bodyTextHash": "2d23a2237c9b6b120f5374273f8e87d8e18a0feff8b8dd88ebad8002e5a095ec",
+      "bodyTextPrefix": "NHÓM 13 1 / 20",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

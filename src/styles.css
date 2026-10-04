@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-accent: #03a9f4;
+  --color-accent-deep: #0288d1;
+  --color-navy: #1565c0;
+  --color-navy-deep: #14206f;
+  --color-ink: #0a2540;
+  --color-ink-soft: #1a3a5c;
+  --color-paper: #f4fbff;
+  --color-mist: #e3f2fd;
+  --color-line: #90caf9;
+  --color-muted: #5a7a96;
+  --color-card: #ffffff;
+  --color-danger: #c62828;
+  --color-warn: #e65100;
+  --color-ok: #2e7d32;
+
+  --color-petal-1: #1e88e5;
+  --color-petal-2: #0288d1;
+  --color-petal-3: #0091ea;
+  --color-petal-4: #1565c0;
+  --color-petal-5: #0070c0;
+  --color-petal-6: #1a47a0;
+  --color-petal-7: #14206f;
+  --color-petal-8: #002060;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+
+  --shadow-soft: 0 18px 40px rgb(10 37 64 / 0.16);
+  --shadow-ring: 0 12px 28px rgb(2 136 209 / 0.22);
+
+  --ease-morph: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-morph: 1500ms;
+  --dur-fast: 250ms;
+  --dur-quick: 150ms;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100dvh;
+    background: var(--color-ink);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+}
+
+.stage {
+  container-type: size;
+  container-name: stage;
+}
+
+.morph-el {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity, width, height, left, top;
+  transition-property: left, top, width, height, opacity, transform, background-color, border-color, box-shadow;
+  transition-duration: var(--dur-morph);
+  transition-timing-function: var(--ease-morph);
+}
+
+.fade-copy {
+  animation: copy-in 520ms var(--ease-out) both;
+}
+
+.fade-copy-1 { animation-delay: 80ms; }
+.fade-copy-2 { animation-delay: 160ms; }
+.fade-copy-3 { animation-delay: 240ms; }
+.fade-copy-4 { animation-delay: 320ms; }
+.fade-copy-5 { animation-delay: 400ms; }
+
+@keyframes copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morph-el {
+    transition-duration: 0.01ms !important;
+  }
+  .fade-copy,
+  .fade-copy-1,
+  .fade-copy-2,
+  .fade-copy-3,
+  .fade-copy-4,
+  .fade-copy-5 {
+    animation: none;
+  }
+}
